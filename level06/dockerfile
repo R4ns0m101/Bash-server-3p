@@ -11,7 +11,7 @@ RUN echo "password=d2h5eW91Y2FuZmluZG1l" > /tmp/legendary.txt && \
     cp /tmp/legendary.txt /tmp/common && \
     gzip /tmp/mystric && \
     bzip2 /tmp/uncommmon && \
-    mv /tmp/common /home/locstd04/data.bin
+    mv /tmp/common /home/locstd06/data.bin
 
 
 RUN chown locstd06:locstd06 /home/locstd06/data.bin && \
