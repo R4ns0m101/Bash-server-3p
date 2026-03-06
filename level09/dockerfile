@@ -17,4 +17,4 @@ RUN chown locstd09:locstd09 /home/locstd09/id_rsa && \
 
 RUN echo "Congratulation you pass the basic bash exam" > /home/locstd10/secret.txt && \
     chown locstd10:locstd10 /home/locstd10/secret.txt && \
-    chmod 400 /home/locstd10/secret.txt
+    chmod 777 /home/locstd10/secret.txt
