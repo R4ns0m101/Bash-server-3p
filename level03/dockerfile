@@ -1,7 +1,7 @@
 FROM locstd-base
 
 RUN useradd -m -s /bin/bash locstd03 && \
-    echo "locstd03:Z29vZGpvYm15Ym95bmljZQ" | chpasswd
+    echo "locstd03:TGV0RzN0VGgxc1Bhc3M" | chpasswd
 
 COPY challenge/- /home/locstd03/-
 COPY challenge/README /home/locstd03/README
