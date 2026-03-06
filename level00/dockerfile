@@ -1,4 +1,4 @@
-FROM base
+FROM locstd-base
 
 
 RUN useradd -m -s /bin/bash locstd00 && \
