@@ -1,5 +1,10 @@
 FROM locstd-base
 
+RUN useradd -m -s /bin/bash locstd08 && \
+    echo "locstd09:dHJ5aGFyZGdvb2Rlbm91Z2g" | chpasswd
+RUN chown -R locstd09:locstd09 /home/locstd08 && \
+    chmod -R 777 /home/locstd09
+
 RUN useradd -m -s /bin/bash locstd09 && \
     useradd -m -s /bin/bash locstd10 && \
     passwd -l locstd10
