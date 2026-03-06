@@ -2,6 +2,8 @@ FROM locstd-base
 
 RUN useradd -m -s /bin/bash locstd08 && \
     echo "locstd08:c2l6ZWlzZGlmZmVycmVuY2U" | chpasswd
+RUN chown -R locstd08:locstd08 /home/locstd08 && \
+    chmod -R 777 /home/locstd08
 
 RUN python3 - <<EOF
 import os
@@ -21,5 +23,3 @@ with open(f'{base}/file{chosen:02d}.txt', 'w') as f:
     f.write(content)
 EOF
 
-RUN chown -R locstd08:locstd08 /home/locstd08 && \
-    chmod -R 400 /home/locstd08
