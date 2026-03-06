@@ -4,7 +4,7 @@ RUN useradd -m -s /bin/bash locstd02 && \
     echo "locstd02:cGFzc3dvcmRpbnNlY3JldA" | chpasswd
 
 
-COPY challenge/system.log /home/locstd01/system.log
+COPY challenge/system.log /home/locstd02/system.log
 COPY challenge/README /home/locstd02/README
 
 RUN chown locstd02:locstd02 /home/locstd02/README && \
@@ -24,6 +24,6 @@ lines.insert(150, '[2024-01-01] DEBUG password=TGV0RzN0VGgxc1Bhc3M')
 for i in range(300):
     lines.append('[2024-01-01] INFO Another random log message')
 
-with open('/home/locstd03/system.log', 'w') as f:
+with open('/home/locstd02/system.log', 'w') as f:
     f.write('\n'.join(lines))
 EOF
