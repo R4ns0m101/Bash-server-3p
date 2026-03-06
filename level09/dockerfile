@@ -1,0 +1,20 @@
+FROM locstd-base
+
+RUN useradd -m -s /bin/bash locstd09 && \
+    useradd -m -s /bin/bash locstd10 && \
+    passwd -l locstd10
+
+RUN mkdir -p /home/locstd10/.ssh && \
+    chmod 700 /home/locstd10/.ssh
+
+COPY challenge/id_rsa /home/locstd09/id_rsa
+COPY challenge/id_rsa.pub /home/locstd10/.ssh/authorized_keys
+
+RUN chown locstd09:locstd09 /home/locstd09/id_rsa && \
+    chmod 644 /home/locstd09/id_rsa && \
+    chown -R locstd10:locstd10 /home/locstd10/.ssh && \
+    chmod 600 /home/locstd10/.ssh/authorized_keys
+
+RUN echo "Congratulation you pass the basic bash exam" > /home/locstd10/secret.txt && \
+    chown locstd10:locstd10 /home/locstd10/secret.txt && \
+    chmod 400 /home/locstd10/secret.txt

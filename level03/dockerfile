@@ -1,0 +1,14 @@
+FROM locstd-base
+
+RUN useradd -m -s /bin/bash locstd03 && \
+    echo "locstd03:Z29vZGpvYm15Ym95bmljZQ" | chpasswd
+
+COPY challenge/- /home/locstd03/-
+COPY challenge/README /home/locstd03/README
+
+RUN chown locstd03:locstd03 /home/locstd03/README && \
+    chmod 400 /home/locstd03/README && \
+    chown locstd03:locstd03 /home/locstd03/- && \
+    chmod 400 /home/locstd03/-
+
+

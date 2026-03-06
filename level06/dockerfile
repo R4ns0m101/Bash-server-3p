@@ -1,0 +1,16 @@
+FROM locstd-base
+
+RUN useradd -m -s /bin/bash locstd06 && \
+    echo "locstd06:eW91a25vd2hvd3RvY2hhbmdlaXQ" | chpasswd
+
+COPY challenge/README /home/locstd6/README
+
+RUN echo "password=d2h5eW91Y2FuZmluZG1l" > /tmp/legendary.txt && \
+    gzip  /tmp/mystric && \               
+    bzip2 /tmp/uncommmon && \
+    mv /tmp/common /home/locstd04/data.bin
+
+
+RUN chown locstd06:locstd06 /home/locstd06/data.bin && \
+    chmod 400 /home/locstd06/data.bin
+

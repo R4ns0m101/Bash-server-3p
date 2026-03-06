@@ -1,0 +1,219 @@
+services:
+  # ============================================
+  # Player 1 - Ports 12222-12231
+  # ============================================
+  level00-player1:
+    build: ./level00
+    container_name: locstd-level00-player1
+    ports:
+      - "12222:22"
+    restart: unless-stopped
+
+  level01-player1:
+    build: ./level01
+    container_name: locstd-level01-player1
+    ports:
+      - "12223:22"
+    restart: unless-stopped
+
+  level02-player1:
+    build: ./level02
+    container_name: locstd-level02-player1
+    ports:
+      - "12224:22"
+    restart: unless-stopped
+
+  level03-player1:
+    build: ./level03
+    container_name: locstd-level03-player1
+    ports:
+      - "12225:22"
+    restart: unless-stopped
+
+  level04-player1:
+    build: ./level04
+    container_name: locstd-level04-player1
+    ports:
+      - "12226:22"
+    restart: unless-stopped
+
+  level05-player1:
+    build: ./level05
+    container_name: locstd-level05-player1
+    ports:
+      - "12227:22"
+    restart: unless-stopped
+
+  level06-player1:
+    build: ./level06
+    container_name: locstd-level06-player1
+    ports:
+      - "12228:22"
+    restart: unless-stopped
+
+  level07-player1:
+    build: ./level07
+    container_name: locstd-level07-player1
+    ports:
+      - "12229:22"
+    restart: unless-stopped
+
+  level08-player1:
+    build: ./level08
+    container_name: locstd-level08-player1
+    ports:
+      - "12230:22"
+    restart: unless-stopped
+
+  level09-player1:
+    build: ./level09
+    container_name: locstd-level09-player1
+    ports:
+      - "12231:22"
+    restart: unless-stopped
+
+  # ============================================
+  # Player 2 - Ports 22222-22231
+  # ============================================
+  level00-player2:
+    build: ./level00
+    container_name: locstd-level00-player2
+    ports:
+      - "22222:22"
+    restart: unless-stopped
+
+  level01-player2:
+    build: ./level01
+    container_name: locstd-level01-player2
+    ports:
+      - "22223:22"
+    restart: unless-stopped
+
+  level02-player2:
+    build: ./level02
+    container_name: locstd-level02-player2
+    ports:
+      - "22224:22"
+    restart: unless-stopped
+
+  level03-player2:
+    build: ./level03
+    container_name: locstd-level03-player2
+    ports:
+      - "22225:22"
+    restart: unless-stopped
+
+  level04-player2:
+    build: ./level04
+    container_name: locstd-level04-player2
+    ports:
+      - "22226:22"
+    restart: unless-stopped
+
+  level05-player2:
+    build: ./level05
+    container_name: locstd-level05-player2
+    ports:
+      - "22227:22"
+    restart: unless-stopped
+
+  level06-player2:
+    build: ./level06
+    container_name: locstd-level06-player2
+    ports:
+      - "22228:22"
+    restart: unless-stopped
+
+  level07-player2:
+    build: ./level07
+    container_name: locstd-level07-player2
+    ports:
+      - "22229:22"
+    restart: unless-stopped
+
+  level08-player2:
+    build: ./level08
+    container_name: locstd-level08-player2
+    ports:
+      - "22230:22"
+    restart: unless-stopped
+
+  level09-player2:
+    build: ./level09
+    container_name: locstd-level09-player2
+    ports:
+      - "22231:22"
+    restart: unless-stopped
+
+  # ============================================
+  # Player 3 - Ports 32222-32231
+  # ============================================
+  level00-player3:
+    build: ./level00
+    container_name: locstd-level00-player3
+    ports:
+      - "32222:22"
+    restart: unless-stopped
+
+  level01-player3:
+    build: ./level01
+    container_name: locstd-level01-player3
+    ports:
+      - "32223:22"
+    restart: unless-stopped
+
+  level02-player3:
+    build: ./level02
+    container_name: locstd-level02-player3
+    ports:
+      - "32224:22"
+    restart: unless-stopped
+
+  level03-player3:
+    build: ./level03
+    container_name: locstd-level03-player3
+    ports:
+      - "32225:22"
+    restart: unless-stopped
+
+  level04-player3:
+    build: ./level04
+    container_name: locstd-level04-player3
+    ports:
+      - "32226:22"
+    restart: unless-stopped
+
+  level05-player3:
+    build: ./level05
+    container_name: locstd-level05-player3
+    ports:
+      - "32227:22"
+    restart: unless-stopped
+
+  level06-player3:
+    build: ./level06
+    container_name: locstd-level06-player3
+    ports:
+      - "32228:22"
+    restart: unless-stopped
+
+  level07-player3:
+    build: ./level07
+    container_name: locstd-level07-player3
+    ports:
+      - "32229:22"
+    restart: unless-stopped
+
+  level08-player3:
+    build: ./level08
+    container_name: locstd-level08-player3
+    ports:
+      - "32230:22"
+    restart: unless-stopped
+
+  level09-player3:
+    build: ./level09
+    container_name: locstd-level09-player3
+    ports:
+      - "32231:22"
+    restart: unless-stopped

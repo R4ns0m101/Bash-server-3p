@@ -1,0 +1,17 @@
+FROM ubuntu:22.04
+
+#Install OpenSSH
+RUN apt-get update && apt-get install -y \
+    openssh-server \ 
+    file gzip bzip2 unzip xz-utils \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN mkdir /var/run/sshd
+
+#Can login with password no root permission
+RUN sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config && \
+    sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin no/' /etc/ssh/sshd_config
+
+
+EXPOSE 22
+CMD ["/usr/sbin/sshd", "-D"]

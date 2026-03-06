@@ -1,0 +1,25 @@
+FROM locstd-base
+
+RUN useradd -m -s /bin/bash locstd08 && \
+    echo "locstd08:c2l6ZWlzZGlmZmVycmVuY2U" | chpasswd
+
+RUN python3 - <<EOF
+import os
+import random
+
+base = '/home/locstd08'
+os.makedirs(base, exist_ok=True)
+
+for i in range(1, 10):
+    with open(f'{base}/file{i:02d}.txt', 'w') as f:
+        f.write('X' * 1024)
+
+chosen = random.randint(1, 10)
+with open(f'{base}/file{chosen:02d}.txt', 'w') as f:
+    content = 'A password is dHJ5aGFyZGdvb2Rlbm91Z2g\n'
+    content += 'X' * (1033 - len(content))
+    f.write(content)
+EOF
+
+RUN chown -R locstd08:locstd08 /home/locstd08 && \
+    chmod -R 400 /home/locstd08

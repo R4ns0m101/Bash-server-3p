@@ -1,0 +1,15 @@
+FROM locstd-base
+
+RUN useradd -m -s /bin/bash locstd01 && \
+    echo "locstd01:bG9jdGhsZXZlbDAwbG9naW4" | chpasswd
+
+
+COPY challenge/password_inhere /home/locstd01/password_inhere
+COPY challenge/README /home/locstd01/README
+
+RUN chown locstd01:locstd01 /home/locstd01/README && \
+    chmod 400 /home/locstd01/README && \
+    chown locstd01:locstd01 /home/locstd01/password_inhere && \
+    chmod 500 /home/locstd01/password_inhere && \
+    chown locstd01:locstd01 /home/locstd02/password_inhere/.im_hidden && \
+    chmod 400 /home/locstd01/password_inhere/.im_hidden

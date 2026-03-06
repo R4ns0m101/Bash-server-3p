@@ -1,0 +1,29 @@
+FROM locstd-base
+
+RUN useradd -m -s /bin/bash locstd07 && \
+    echo "locstd07:d2h5eW91Y2FuZmluZG1l" | chpasswd
+
+COPY challenge/README /home/locstd7/README
+
+RUN python3 - <<EOF
+import os
+import random
+
+base = '/home/locstd07'
+dirs = [f'dir{i:02d}' for i in range(1, 11)]
+
+
+for d in dirs:
+    os.makedirs(f'{base}/{d}', exist_ok=True)
+
+for d in dirs:
+    with open(f'{base}/{d}/null.txt', 'w') as f:
+        f.write('nothing here\n')
+
+chosen = random.choice(dirs)
+with open(f'{base}/{chosen}/secret.txt', 'w') as f:
+    f.write('A password is c2l6ZWlzZGlmZmVycmVuY2U\n')
+EOF
+
+RUN chown -R locstd07:locstd07 /home/locstd07 && \
+    chmod -R 400 /home/locstd07

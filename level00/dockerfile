@@ -1,0 +1,15 @@
+FROM base
+
+
+RUN useradd -m -s /bin/bash locstd00 && \
+    echo "locstd00:beginnerlevel" | chpasswd
+
+
+COPY challenge/README /home/locstd00/README
+COPY challenge/secret.txt /home/locstd00/secret.txt
+
+
+RUN chown locstd00:locstd00 /home/locstd00/README && \
+    chmod 400 /home/locstd00/README && \
+    chown locstd00:locstd00 /home/locstd00/secret.txt && \
+    chmod 400 /home/locstd00/secret.txt

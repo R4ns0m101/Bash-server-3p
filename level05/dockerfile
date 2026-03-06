@@ -1,0 +1,13 @@
+FROM locstd-base
+
+RUN useradd -m -s /bin/bash locstd05 && \
+    echo "locstd05:nicedecodingkub" | chpasswd
+
+
+COPY challenge/nopermission.sh /home/locstd05/nopermission.sh
+COPY challenge/README /home/locstd05/README
+
+RUN chown locstd05:locstd05 /home/locstd05/README && \
+    chmod 400 /home/locstd05/README && \
+    chown locstd05:locstd05 /home/locstd05/nopermission.sh && \
+    chmod 000 /home/locstd05/nopermission.sh

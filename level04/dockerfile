@@ -1,0 +1,13 @@
+FROM locstd-base
+
+RUN useradd -m -s /bin/bash locstd04 && \
+    echo "locstd04:d2hhdHRoZWZ1Y2tpc3RoaXM" | chpasswd
+
+
+COPY challenge/encode.txt /home/locstd04/encode.txt
+COPY challenge/README /home/locstd04/README
+
+RUN chown locstd04:locstd04 /home/locstd04/README && \
+    chmod 400 /home/locstd04/README && \
+    chown locstd04:locstd04 /home/locstd04/encode.txt && \
+    chmod 400 /home/locstd04/encode.txt
