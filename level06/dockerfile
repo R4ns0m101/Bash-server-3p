@@ -6,7 +6,10 @@ RUN useradd -m -s /bin/bash locstd06 && \
 COPY challenge/README /home/locstd6/README
 
 RUN echo "password=d2h5eW91Y2FuZmluZG1l" > /tmp/legendary.txt && \
-    gzip  /tmp/mystric && \               
+    cp /tmp/legendary.txt /tmp/mystric && \
+    cp /tmp/legendary.txt /tmp/uncommmon && \
+    cp /tmp/legendary.txt /tmp/common && \
+    gzip /tmp/mystric && \
     bzip2 /tmp/uncommmon && \
     mv /tmp/common /home/locstd04/data.bin
 
