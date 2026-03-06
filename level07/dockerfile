@@ -4,7 +4,7 @@ RUN useradd -m -s /bin/bash locstd07 && \
     echo "locstd07:d2h5eW91Y2FuZmluZG1l" | chpasswd
 
 RUN chown -R locstd07:locstd07 /home/locstd07 && \
-    chmod -R 400 /home/locstd07
+    chmod -R 444 /home/locstd07
 
 COPY challenge/README /home/locstd07/README
 
