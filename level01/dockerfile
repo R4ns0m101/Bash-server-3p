@@ -11,5 +11,5 @@ RUN chown locstd01:locstd01 /home/locstd01/README && \
     chmod 400 /home/locstd01/README && \
     chown locstd01:locstd01 /home/locstd01/password_inhere && \
     chmod 500 /home/locstd01/password_inhere && \
-    chown locstd01:locstd01 /home/locstd02/password_inhere/.im_hidden && \
+    chown locstd01:locstd01 /home/locstd01/password_inhere/.im_hidden && \
     chmod 400 /home/locstd01/password_inhere/.im_hidden
