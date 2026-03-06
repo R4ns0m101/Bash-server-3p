@@ -5,6 +5,8 @@ RUN useradd -m -s /bin/bash locstd08 && \
 RUN chown -R locstd08:locstd08 /home/locstd08 && \
     chmod -R 777 /home/locstd08
 
+COPY /challenge/README /home/locstd08/README
+
 RUN python3 - <<EOF
 import os
 import random
@@ -12,7 +14,7 @@ import random
 base = '/home/locstd08'
 os.makedirs(base, exist_ok=True)
 
-for i in range(1, 10):
+for i in range(1, 11):
     with open(f'{base}/file{i:02d}.txt', 'w') as f:
         f.write('X' * 1024)
 
